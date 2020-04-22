@@ -28,7 +28,7 @@ module SymmetricEncryption
     def decrypt(encrypted_string)
       return if encrypted_string.nil?
 
-      encrypted_string = encrypted_string.to_s
+      encrypted_string = encrypted_string.dup.to_s
       encrypted_string.force_encoding(SymmetricEncryption::BINARY_ENCODING)
       return encrypted_string if encrypted_string.empty?
 
